@@ -1,59 +1,86 @@
-.body_index,
-.body_red,
-.body_blue,
-.body_green,
-.body_black {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
     min-height: 100vh;
-    text-align: center;
     display: flex;
     flex-direction: column;
 }
 
+/* ====== Temas de color por página ====== */
 .body_index {
     background-color: white;
+    color: black;
 }
 .body_red {
     background-color: red;
+    color: white;
 }
 .body_blue {
     background-color: blue;
+    color: white;
 }
 .body_green {
     background-color: green;
+    color: white;
 }
 .body_black {
     background-color: black;
     color: white; 
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+/* ====== <header> con layout flex como en clase ======*/
+header {
+    display: flex;  
+    align-items: center; 
+    justify-content: space-between; 
     background-color: lightgray;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 8px;
-    border: 2px solid #ccc; 
+    border: 2px solid #ccc;
+    margin: 10px;
+    color: black;
 }
 
-nav a {
+/* Logo/título del sitio */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkslategrey;
+}
+
+/* ====== menu principal ====== */
+    /* 'nav ul' → selector compuesto (descendiente) */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 0;        
+}
+
+/* 'nav ul li' → cada item del menu */
+nav ul li {
+    position: relative; 
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px 16px;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 16px;
     border: 1px solid #bbb; 
     border-radius: 10px;
     background: white;
+    margin: 0 2px;
+    transition: background 0.25s ease;
 }
 
-nav a:hover {
+/* Hover del enlace principal */
+nav ul li a:hover {
     background: #eee;
 }
 
+/* ====== Colores especificos para cada enlace del menu ====== */
 .navbar_index {
     color: darkslategrey;
 }
@@ -68,6 +95,21 @@ nav a:hover {
 }
 .navbar_black {
     color: black;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    margin: 0 20px;
+}
+
+main h1 {
+    margin-bottom: 20px;
+}
+
+main p {
+    margin: 10px 0;
 }
 
 img {
