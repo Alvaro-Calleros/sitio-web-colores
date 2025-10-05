@@ -5,22 +5,20 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-/* ====== Temas de color por página ====== */
 .body_index {
     background-color: white;
     color: black;
 }
 .body_red {
-    background-color: red;
+    background-color: #3d0000;
     color: white;
 }
 .body_blue {
-    background-color: blue;
+    background-color: #000f3d;
     color: white;
 }
 .body_green {
-    background-color: green;
+    background-color: #003d00;
     color: white;
 }
 .body_black {
@@ -135,3 +133,95 @@ img {
     padding: 10px 0;
     margin-top: auto;
 }
+
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* Detrás de todo el contenido */
+    overflow: hidden;
+    pointer-events: none; /* No interfiere con los clics */
+  }
+  
+  /* Cada orbe individual */
+  .bg-animation .orb {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform, opacity;
+    opacity: 0;
+    animation: float 9s infinite ease-in-out;
+  }
+  
+  /* Keyframes para la animación de flotación */
+  @keyframes float {
+    0%, 100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.6;
+    }
+    25% {
+      transform: scale(1.4) translate(var(--tx1), var(--ty1));
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(0.7) translate(var(--tx2), var(--ty2));
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1.3) translate(var(--tx3), var(--ty3));
+      opacity: 0.9;
+    }
+  }
+  
+  /* =========================================================
+     Colores y Estilos por Página
+  ========================================================= */
+  
+  /* --- Página de Inicio (Index) --- */
+  .body_index .orb-1 { --c: #ffab73; width: 35vw; height: 35vw; top: 5%; left: -10%; animation-delay: 0s; --tx1: 20vw; --ty1: 25vh; --tx2: -10vw; --ty2: 50vh; --tx3: 15vw; --ty3: 70vh; }
+  .body_index .orb-2 { --c: #ff847c; width: 40vw; height: 40vw; top: 50%; left: 15%; animation-delay: 0.5s; --tx1: -15vw; --ty1: -20vh; --tx2: 25vw; --ty2: -30vh; --tx3: -5vw; --ty3: -50vh; }
+  .body_index .orb-3 { --c: #e84a5f; width: 30vw; height: 30vw; top: 20%; left: 70%; animation-delay: 1s; --tx1: -25vw; --ty1: 10vh; --tx2: 10vw; --ty2: -40vh; --tx3: -15vw; --ty3: 30vh; }
+  .body_index .orb-4 { --c: #a4303f; width: 45vw; height: 45vw; top: 70%; left: 50%; animation-delay: 1.5s; --tx1: 10vw; --ty1: -30vh; --tx2: -20vw; --ty2: -15vh; --tx3: 20vw; --ty3: -45vh; }
+  
+  .body_index .orb { background: radial-gradient(circle, var(--c) 0%, rgba(255,255,255,0) 60%); }
+  
+  /* --- Página Azul --- */
+  .body_blue .orb-1 { --c: #0077b6; width: 40vw; height: 40vw; top: -5%; left: -5%; animation-delay: 0s; --tx1: 15vw; --ty1: 20vh; --tx2: -5vw; --ty2: 45vh; --tx3: 10vw; --ty3: 60vh; }
+  .body_blue .orb-2 { --c: #00b4d8; width: 35vw; height: 35vw; top: 40%; left: 20%; animation-delay: 0.5s; --tx1: -10vw; --ty1: -15vh; --tx2: 20vw; --ty2: -25vh; --tx3: -8vw; --ty3: -40vh; }
+  .body_blue .orb-3 { --c: #ade8f4; width: 30vw; height: 30vw; top: 15%; left: 75%; animation-delay: 1s; --tx1: -20vw; --ty1: 15vh; --tx2: 5vw; --ty2: -35vh; --tx3: -12vw; --ty3: 25vh; }
+  .body_blue .orb-4 { --c: #90e0ef; width: 50vw; height: 50vw; top: 65%; left: 40%; animation-delay: 1.5s; --tx1: 12vw; --ty1: -25vh; --tx2: -15vw; --ty2: -10vh; --tx3: 18vw; --ty3: -40vh; }
+  
+  .body_blue .orb { background: radial-gradient(circle, var(--c) 0%, rgba(255,255,255,0) 55%); }
+  
+  /* --- Página Roja --- */
+  .body_red .orb-1 { --c: #d00000; width: 38vw; height: 38vw; top: 0%; left: -15%; animation-delay: 0s; --tx1: 25vw; --ty1: 15vh; --tx2: -15vw; --ty2: 55vh; --tx3: 20vw; --ty3: 65vh; }
+  .body_red .orb-2 { --c: #ff4d4d; width: 42vw; height: 42vw; top: 45%; left: 25%; animation-delay: 0.5s; --tx1: -20vw; --ty1: -10vh; --tx2: 30vw; --ty2: -35vh; --tx3: -10vw; --ty3: -55vh; }
+  .body_red .orb-3 { --c: #9d0208; width: 33vw; height: 33vw; top: 10%; left: 80%; animation-delay: 1s; --tx1: -30vw; --ty1: 20vh; --tx2: 15vw; --ty2: -45vh; --tx3: -20vw; --ty3: 35vh; }
+  .body_red .orb-4 { --c: #6a040f; width: 48vw; height: 48vw; top: 75%; left: 60%; animation-delay: 1.5s; --tx1: 15vw; --ty1: -35vh; --tx2: -25vw; --ty2: -20vh; --tx3: 25vw; --ty3: -50vh; }
+  
+  .body_red .orb { background: radial-gradient(circle, var(--c) 0%, rgba(255,255,255,0) 58%); }
+  
+  /* --- Página Verde --- */
+  .body_green .orb-1 { --c: #55a630; width: 36vw; height: 36vw; top: 2%; left: -8%; animation-delay: 0s; --tx1: 18vw; --ty1: 22vh; --tx2: -8vw; --ty2: 48vh; --tx3: 13vw; --ty3: 68vh; }
+  .body_green .orb-2 { --c: #aacc00; width: 41vw; height: 41vw; top: 48%; left: 18%; animation-delay: 0.5s; --tx1: -18vw; --ty1: -18vh; --tx2: 28vw; --ty2: -32vh; --tx3: -8vw; --ty3: -52vh; }
+  .body_green .orb-3 { --c: #bfd200; width: 31vw; height: 31vw; top: 18%; left: 72%; animation-delay: 1s; --tx1: -28vw; --ty1: 12vh; --tx2: 12vw; --ty2: -42vh; --tx3: -18vw; --ty3: 32vh; }
+  .body_green .orb-4 { --c: #2b9348; width: 46vw; height: 46vw; top: 72%; left: 55%; animation-delay: 1.5s; --tx1: 13vw; --ty1: -32vh; --tx2: -18vw; --ty2: -18vh; --tx3: 22vw; --ty3: -48vh; }
+  
+  .body_green .orb { background: radial-gradient(circle, var(--c) 0%, rgba(255,255,255,0) 62%); }
+  
+  /* --- Página Dark --- */
+  .body_black .orb-1 { --c: #4a4e69; width: 37vw; height: 37vw; top: 3%; left: -12%; animation-delay: 0s; --tx1: 22vw; --ty1: 18vh; --tx2: -12vw; --ty2: 52vh; --tx3: 18vw; --ty3: 72vh; }
+  .body_black .orb-2 { --c: #9a8c98; width: 43vw; height: 43vw; top: 47%; left: 22%; animation-delay: 0.5s; --tx1: -17vw; --ty1: -12vh; --tx2: 27vw; --ty2: -38vh; --tx3: -12vw; --ty3: -58vh; }
+  .body_black .orb-3 { --c: #c9ada7; width: 34vw; height: 34vw; top: 12%; left: 78%; animation-delay: 1s; --tx1: -27vw; --ty1: 18vh; --tx2: 13vw; --ty2: -48vh; --tx3: -22vw; --ty3: 38vh; }
+  .body_black .orb-4 { --c: #22223b; width: 49vw; height: 49vw; top: 78%; left: 58%; animation-delay: 1.5s; --tx1: 14vw; --ty1: -38vh; --tx2: -22vw; --ty2: -22vh; --tx3: 24vw; --ty3: -52vh; }
+  
+  .body_black .orb { background: radial-gradient(circle, var(--c) 0%, rgba(0,0,0,0) 60%); }
+  
+  
+  /* Accesibilidad: desactivar animación si el usuario lo prefiere */
+  @media (prefers-reduced-motion: reduce) {
+    .bg-animation .orb {
+      animation: none;
+      opacity: 0.5; /* Mostrar orbes estáticos con opacidad reducida */
+      transform: scale(1) translate(var(--tx2), var(--ty2));
+    }
+  }
+  
